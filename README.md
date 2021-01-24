@@ -28,7 +28,6 @@ driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
 點擊留言管理
 
-![0%20Wechat_auto_reply%207a8577667bdc469688ec771b14a3c552/Untitled%201.png](0%20Wechat_auto_reply%207a8577667bdc469688ec771b14a3c552/Untitled%201.png)
 
 ```python
 driver.find_element_by_xpath("//*[@title='留言管理']").click()
