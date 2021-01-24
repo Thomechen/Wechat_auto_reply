@@ -44,7 +44,7 @@ for i,j,k,l in zip(driver.find_elements_by_xpath("//*[@class='comment-list__item
     
         l.click()
         
-        time.sleep(2)
+        # time.sleep(2)
     else:
         continue
     
