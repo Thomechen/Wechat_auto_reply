@@ -1,11 +1,7 @@
 # Wechat_auto_reply
 Auto comment by filter keyword
 
-# 0.Wechat_auto_reply
-
 此文件為解說微信公眾號自動回覆流程
-
-![0%20Wechat_auto_reply%207a8577667bdc469688ec771b14a3c552/Untitled.png](0%20Wechat_auto_reply%207a8577667bdc469688ec771b14a3c552/Untitled.png)
 
 使用到的模組
 
