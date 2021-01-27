@@ -13,10 +13,11 @@ from selenium import webdriver
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 import time
+import os
 
 chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-chrome_driver = r"D:\Browser\chromedriver_win32\chromedriver.exe" #如果將chrome驅動放到Python目錄，這句可以不要
+chrome_driver = "./chromedriver.exe" #如果將chrome驅動放到Python目錄，這句可以不要
 driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
 driver.find_element_by_xpath("//*[@title='留言管理']").click()
