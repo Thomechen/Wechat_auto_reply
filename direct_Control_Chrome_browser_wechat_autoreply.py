@@ -26,23 +26,27 @@ driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
 
 # stop1 = 6 #設定回復幾則留言,由上到下
-for j in driver.find_elements_by_xpath("//div[@class='comment-list__item']"): #主要留言
+for j,k,l in zip(driver.find_elements_by_xpath("//div[@class='comment-list__item']"),
+               driver.find_elements_by_xpath("//div[@class='edit_area']"),
+               driver.find_elements_by_xpath("//*[@class='weui-desktop-btn weui-desktop-btn_primary']")): #主要留言
 
     if '测试' in j.text : #關鍵字篩選
         move = ActionChains(driver).move_to_element(j)
         move.perform()
 
         locator = (By.CLASS_NAME,'icon-reply.comment_opr_meta')
-        WebDriverWait(driver,1).until(EC.presence_of_element_located(locator))#等待回復按鈕出現
+        WebDriverWait(driver,5).until(EC.presence_of_element_located(locator))#等待回復按鈕出現
 
         driver.find_element_by_xpath("//*[@title='回复']").click()
 
         locator = (By.CLASS_NAME,'weui-desktop-btn.weui-desktop-btn_primary')
-        WebDriverWait(driver,1).until(EC.presence_of_element_located(locator))#等待確認回復按鈕出現
+        WebDriverWait(driver,5).until(EC.presence_of_element_located(locator))#等待確認回復按鈕出現
 
-        driver.find_element_by_class_name('edit_area').send_keys('自動回復測試')
+        k.click()
+        time.sleep(1)
+        k.send_keys('自動回復測試')
 
-        driver.find_element_by_xpath("//*[@class='weui-desktop-btn weui-desktop-btn_primary']").click()
+        l.click()
 
         time.sleep(1)
     else:
